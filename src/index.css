@@ -1,13 +1,494 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Roboto:ital,wght@0,300;0,700;1,500&display=swap");
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html,
+body {
+  font-family: "Roboto", sans-serif;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+label {
+  display: block;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  margin: 0.5rem 0;
+}
+
+input,
+textarea {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: inherit;
+  width: 100%;
+  max-width: 100%;
+  border: 1px solid rgb(209, 209, 209);
+  color: rgb(31, 31, 31);
+  box-shadow: rgb(0 0 0 / 4%) 1px 1px 3px;
+  transition: border-radius 200ms ease 0s;
+  border-radius: 4px;
+  padding: 20px 12px;
+}
+
+input {
+  height: 44px;
+}
+
+input:focus,
+textarea:focus {
+  border: 2px solid #003087;
+  box-shadow: rgb(0 0 0 / 4%) 0px 1px 3px inset;
+  outline: none;
+}
+
+.invalidInput {
+  border: 1px solid rgb(249, 72, 57);
+}
+
+.error-text {
+  color: #ff0000 !important;
+  font-weight: 600;
+  margin: 0.5rem 0;
+}
+
+header {
+  height: 4.4rem;
+  box-shadow: 0 4px 2px -2px gray;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background-color: #fff;
+  z-index: 5;
+}
+
+nav {
+  width: 90%;
+  display: flex;
+  justify-content: flex-start;
+  margin: 1rem auto;
+}
+
+nav img {
+  height: auto;
+  width: 7rem;
+  margin: 0;
+}
+
+nav h2 {
+  color: #0c0c0d;
+  font-size: 1.5rem;
+  font-family: "Lato", sans-serif;
+}
+
+ul {
+  margin-left: 5rem;
+  margin-top: 13px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+li {
+  list-style: none;
+}
+
+li a {
+  color: #0c0c0d;
+  margin: 0 1rem;
+  font-size: 1.2rem;
+  font-family: "Lato", sans-serif;
+}
+
+li a:hover {
+  border-bottom: 3px solid #4d4d4d;
+}
+
+button {
+  cursor: pointer;
+  display: block;
+  padding: 0.9rem 0.5rem;
+  width: 6rem;
+  border: none;
+  border-radius: 25px !important;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.buttons {
+  margin-left: auto;
+  display: flex;
+}
+
+.buttons button {
+  margin: 0 1rem;
+}
+
+.login {
+  background-color: #fff;
+  color: #003087;
+  border: 2px solid #003087;
+}
+
+.signup {
+  background-color: #003087;
+  color: #fff;
+}
+
+.logout {
+  background-color: #fff;
+  color: #1072eb;
+  border: 2px solid #fff;
+}
+
+.hero p {
+  width: 80%;
+}
+
+.hero {
+  display: flex;
+  width: 90%;
+  margin: 7rem auto;
+}
+.hero h1 {
+  margin-top: 3rem;
+  font-size: 3rem;
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+}
+
+.hero p {
+  margin: 1.5rem 0;
+  font-size: 1.25rem;
+  color: #2c2e2f;
+  font-weight: 500 !important;
+}
+
+.hero .invite {
+  width: 15rem;
+  padding: 1.5rem auto;
+  background-color: #003087;
+  color: #fff;
+}
+
+.hero .offer {
+  font-size: 1rem;
+}
+
+.login-section {
+  width: 35%;
+  margin: 5rem auto;
+  padding: 2rem;
+  border: 1px solid rgba(0, 0, 0, 0.121569);
+}
+
+.advantages-section {
+  width: 90%;
+  margin: 8rem auto;
+  display: flex;
+}
+
+.advantages-section img {
+  width: 30vw;
+}
+
+.advantages-section h1 {
+  margin-top: 3rem;
+  font-size: 3rem;
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+}
+
+.advantages-section .right-angel-text {
+  width: 40%;
+  margin: auto;
+}
+
+.advantages-section .left-angel-text {
+  width: 50%;
+  margin: auto;
+}
+
+.advantages-section p {
+  margin: 1.5rem 0;
+  font-size: 1.3rem;
+  line-height: 1.3;
+  color: #2c2e2f;
+  font-weight: 500 !important;
+}
+
+.advantages-section a {
+  font-weight: 500;
+  font-size: 1.7rem;
+  color: #1072eb;
+}
+
+.hide-on-mobile-view {
+  display: block;
+}
+
+.show-on-mobile-view {
+  display: none;
+}
+
+.login-section .img-container {
+  width: 50%;
+  margin: auto;
+}
+
+.login-section img {
+  height: auto;
+  width: 10rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.login-btn {
+  margin: 2rem 0;
+  background-color: #003087;
+  color: #fff;
+  width: 100%;
+}
+
+/* Dashboard Section */
+
+.total-balance {
+  font-family: "Lato", sans-serif;
+  font-size: 1.4rem;
+}
+
+.send-money-form {
+  width: 30%;
+}
+
+.flex {
+  display: flex;
+}
+
+.recived {
+  color: green;
+}
+
+.send {
+  color: blue;
+}
+
+table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin-left: auto;
+  padding: 0;
+  width: 50%;
+  table-layout: fixed;
+}
+
+table caption {
+  font-size: 1.5em;
+  margin: 0 0.75em;
+  margin-bottom: 0.5rem;
+}
+
+table tr {
+  border: 1px solid #ddd;
+  padding: 0.35em;
+}
+
+table thead {
+  background-color: #f8f8f8;
+}
+
+table th,
+table td {
+  padding: 0.625em;
+  text-align: center;
+}
+
+table th {
+  font-size: 0.85em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 600px) {
+  table {
+    border: 0;
+  }
+
+  table caption {
+    font-size: 1.3em;
+  }
+
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: 0.625em;
+  }
+
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: 0.8em;
+    text-align: right;
+  }
+
+  table td::before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  table td:last-child {
+    border-bottom: 0;
+  }
+}
+
+@media only screen and (max-width: 999px) {
+  .advantages-section {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .advantages-section .right-angel-text {
+    width: 90%;
+    margin: auto;
+  }
+
+  .advantages-section .left-angel-text {
+    width: 90%;
+    margin: auto;
+  }
+
+  .advantages-section img {
+    width: 90vw;
+    margin-top: 1.5rem;
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .main-menu {
+    display: none;
+  }
+
+  button {
+    padding: 0.9rem 0.3rem;
+    width: 4rem;
+  }
+
+  .login {
+    border: none;
+  }
+
+  .hero h1 {
+    width: 100%;
+    margin-top: 1rem;
+    font-size: 2rem;
+  }
+
+  .hero p {
+    width: 100%;
+    margin: 1rem 0;
+    font-size: 1.25rem;
+  }
+
+  .hide-on-mobile-view {
+    display: none;
+  }
+
+  .show-on-mobile-view {
+    display: block;
+  }
+  .hero img {
+    margin-top: 1.5rem;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .flex {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .flex form {
+    width: 90%;
+  }
+
+  .flex table {
+    width: 90%;
+  }
+}
+
+/* Sign Up/ Login Using Google */
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:500);
+.google-btn {
+  width: 184px;
+  height: 42px;
+  background-color: #4285f4;
+  border-radius: 2px;
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25);
+  margin: 1rem 0;
+}
+.google-btn .google-icon-wrapper {
+  position: absolute;
+  margin-top: 1px;
+  margin-left: 1px;
+  width: 40px;
+  height: 40px;
+  border-radius: 2px;
+  background-color: #fff;
+}
+.google-btn .google-icon {
+  position: absolute;
+  margin-top: 11px;
+  margin-left: 11px;
+  width: 18px;
+  height: 18px;
+}
+.google-btn .btn-text {
+  float: right;
+  margin: 11px 11px 0 0;
+  color: #fff;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+  font-family: "Roboto";
+}
+.google-btn:hover {
+  box-shadow: 0 0 6px #4285f4;
+}
+.google-btn:active {
+  background: #1669f2;
 }
